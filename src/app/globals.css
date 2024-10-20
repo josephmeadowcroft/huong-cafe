@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(140, 4%, 10%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(140, 4%, 10%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(140, 4%, 10%);
+  --primary: hsl(140, 4%, 41%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(140, 4%, 95%);
+  --secondary-foreground: hsl(140, 4%, 41%);
+  --muted: hsl(140, 4%, 95%);
+  --muted-foreground: hsl(140, 4%, 46%);
+  --accent: hsl(3, 85%, 57%);
+  --accent-yellow: hsl(61, 75%, 44%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(3, 85%, 57%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(140, 4%, 90%);
+  --input: hsl(140, 4%, 90%);
+  --ring: hsl(140, 4%, 41%);
+  --chart-1: hsl(3, 85%, 57%);
+  --chart-2: hsl(61, 75%, 44%);
+  --chart-3: hsl(140, 4%, 41%);
+  --chart-4: hsl(43, 74%, 66%);
+  --chart-5: hsl(27, 87%, 67%);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(140, 4%, 10%);
+  --foreground: hsl(0, 0%, 100%);
+  --card: hsl(140, 4%, 15%);
+  --card-foreground: hsl(0, 0%, 100%);
+  --popover: hsl(140, 4%, 15%);
+  --popover-foreground: hsl(0, 0%, 100%);
+  --primary: hsl(140, 4%, 41%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(140, 4%, 25%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(140, 4%, 25%);
+  --muted-foreground: hsl(140, 4%, 70%);
+  --accent: hsl(3, 85%, 57%);
+  --accent-yellow: hsl(61, 75%, 44%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(3, 85%, 57%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(140, 4%, 25%);
+  --input: hsl(140, 4%, 25%);
+  --ring: hsl(140, 4%, 60%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
