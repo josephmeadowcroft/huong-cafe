@@ -1,8 +1,8 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Lexend_Deca } from "next/font/google";
 import NavBar from "@/components/NavBar";
 
-const inter = Inter({ subsets: ["latin"] });
+const lexened_deca = Lexend_Deca({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Huong Cafe",
@@ -12,14 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-primary`}>
+      <body className={`${lexened_deca.className} bg-primary`}>
         <NavBar />
-        <main className="container mx-auto py-8 text-foreground pt-32">
-          {children}
-        </main>
-        <footer className="bg-white text-hred p-4 mt-8">
-          <div className="container mx-auto text-center">
-            © 2023 Huong Cafe. All rights reserved.
+        <main className="container py-8 text-foreground pt-28">{children}</main>
+        <footer className="bg-primary p-4 mt-8">
+          <div className="container mx-auto text-center text-white">
+            © 2024 Huong Cafe. All rights reserved.
           </div>
         </footer>
       </body>

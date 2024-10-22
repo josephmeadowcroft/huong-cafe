@@ -10,7 +10,6 @@ const menuItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Menu", href: "/menu" },
-  { name: "Photos", href: "/photos" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -38,16 +37,15 @@ const NavBar = () => {
       <nav className="container mx-auto px-4">
         <div
           className={`
-          flex items-center justify-between
-          transition-all duration-300 ease-in-out
-          ${isScrolled ? "h-12" : "h-16"}
+          flex items-center justify-between transition-all duration-300 ease-in-out
+          ${isScrolled ? "h-12" : "h-14"}
         `}
         >
           {/* Logo */}
           <Link
             href="/"
             className={`text-2xl font-bold flex items-center transition-all duration-300 ease-in-out origin-left ${
-              isScrolled ? "scale-100" : "scale-125"
+              isScrolled ? "scale-100" : "scale-125 opacity-0"
             }`}
           >
             <div className="relative">
