@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import HeroSection from "@/components/HeroSection";
 import WelcomeSection from "@/components/WelcomeSection";
+import LocationBox from "@/components/LocationBox";
 
 export default function Home() {
   return (
@@ -13,19 +13,12 @@ export default function Home() {
         <HeroSection />
       </div>
 
-      {/* Alternating Cards */}
       <div className="container mx-auto px-4 py-4 pt-2">
         <WelcomeSection />
 
         {/* Interstitial Text Box */}
-        <div className="bg-primary text-white p-8 rounded-lg mb-16">
-          <h3 className="text-2xl font-bold mb-4">Where to find us</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
+        <div className="bg-primary text-white mx-auto px-12 py-8 pt-4 rounded-lg relative mb-16 flex flex-col md:flex-row">
+          <LocationBox />
         </div>
 
         {/* Card 2 */}

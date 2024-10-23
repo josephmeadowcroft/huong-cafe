@@ -1,4 +1,5 @@
 import "./globals.css";
+import "leaflet/dist/leaflet.css";
 import { Lexend_Deca } from "next/font/google";
 import NavBar from "@/components/NavBar";
 
