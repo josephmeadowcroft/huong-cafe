@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 import { Lexend_Deca } from "next/font/google";
 import NavBar from "@/components/NavBar";
 
-const lexened_deca = Lexend_Deca({ subsets: ["latin"] });
+const lexened_deca = Lexend_Deca({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: "Huong Cafe",

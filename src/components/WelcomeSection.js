@@ -28,6 +28,7 @@ const WelcomeSection = () => {
                 alt="Polaroid Image 1"
                 fill
                 className="object-contain"
+                draggable={false}
               />
             </div>
 
@@ -38,6 +39,7 @@ const WelcomeSection = () => {
                 alt="Polaroid Image 2"
                 fill
                 className="object-contain"
+                draggable={false}
               />
             </div>
           </div>

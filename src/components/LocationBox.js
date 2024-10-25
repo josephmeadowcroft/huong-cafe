@@ -1,68 +1,54 @@
 "use client";
 
-import { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
+import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import Emoji from "./Emoji";
 
 const position = [51.54382, -0.04697];
 
-const customIcon = new L.Icon({
-  iconUrl:
-    "https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
-  shadowUrl:
-    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
+const Map = dynamic(() => import("./Map"), { ssr: false });
 
 export default function LocationBox() {
+  const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
-    // This is needed to re-render the map when the component mounts
-    window.dispatchEvent(new Event("resize"));
+    setIsMounted(true);
   }, []);
 
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-      <h2 className="text-2xl font-bold text-center py-4 bg-primary text-white">
-        Where to Find Us
-      </h2>
-      <div className="flex flex-col md:flex-row">
-        <div className="w-full md:w-1/2 h-[400px]">
-          <MapContainer
-            center={position}
-            zoom={15}
-            style={{ height: "100%", width: "100%" }}
-          >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={position} icon={customIcon}>
-              <Popup>
-                Huong Cafe <br /> Contemporary Vietnamese Cuisine
-              </Popup>
-            </Marker>
-          </MapContainer>
-        </div>
-        <div className="w-full md:w-1/2 p-6 text-black">
-          <h3 className="text-xl font-semibold mb-4">Huong Cafe</h3>
-          <p className="mb-4">
-            Experience the rich flavors of contemporary Vietnamese cuisine in
-            the heart of the city. Our cafe offers a unique blend of traditional
-            recipes with a modern twist.
-          </p>
-          <div className="mb-4">
-            <h4 className="font-semibold">Address:</h4>
-            <p>123 Example Street</p>
-            <p>City, State 12345</p>
+    <div className="bg-primary shadow-lg mx-auto p-4 md:p-10 rounded-lg relative mb-16 flex flex-col md:flex-row">
+      <div className="bg-white shadow-lg w-full z-0 rounded-lg overflow-hidden">
+        <div className="flex flex-col md:flex-row text-black">
+          <div className="hidden md:block w-full md:w-2/5 h-[350px]">
+            {isMounted && <Map position={position} />}
           </div>
-          <div>
-            <h4 className="font-semibold">Opening Hours:</h4>
-            <p>Monday - Friday: 7:00 AM - 9:00 PM</p>
-            <p>Saturday - Sunday: 8:00 AM - 10:00 PM</p>
+          <div className="w-full md:w-3/5 p-6">
+            <h3 className="text-3xl font-bold mb-4">Where to find us</h3>
+            <div className="mb-4 text-lg">
+              <p>
+                <Emoji symbol="📍" />
+                190 Well Street
+              </p>
+              <p>Hackney</p>
+              <p>London</p>
+              <p>E9 6QT</p>
+            </div>
+            <div className="mb-4 text-lg">
+              <h4 className="font-semibold">Opening Hours:</h4>
+              <p>Monday - Friday: 7:00 AM - 9:00 PM</p>
+              <p>Saturday - Sunday: 8:00 AM - 10:00 PM</p>
+            </div>
+            <div className="md:hidden">
+              <Link
+                href={`https://www.google.com/maps/search/?api=1&query=${position[0]},${position[1]}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90 transition-colors duration-200"
+              >
+                View on Google Maps
+              </Link>
+            </div>
           </div>
         </div>
       </div>
