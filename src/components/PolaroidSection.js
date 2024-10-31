@@ -1,4 +1,6 @@
 import Image from "next/image";
+import PopButton from "./PopButton";
+import Emoji from "./Emoji";
 
 const WelcomeSection = () => {
   return (
@@ -6,16 +8,24 @@ const WelcomeSection = () => {
       <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
         {/* Text Content */}
         <div className="w-full md:w-1/2 flex flex-col items-start">
-          <h3 className="text-3xl font-bold mb-4 text-black">Open Now</h3>
+          <h3 className="text-3xl font-bold mb-4 text-black">
+            Open Now
+            <Emoji symbol="🎉" className="pl-2" />
+          </h3>
           <p className="text-foreground mb-6">
-            We're excited to announce that our Vietnamese café is now open! We
-            cannot wait to bring our Vietnamese cuisine to you, so whether
-            you're just stopping by or settling in for a relaxing meal, we look
-            forward to serving you and becoming part of your community.
+            We&aposre excited to announce that our Vietnamese café is now open!
+            We cannot wait to bring our Vietnamese cuisine to you, so whether
+            you&aposre just stopping by or settling in for a relaxing meal, we
+            look forward to serving you and becoming part of your community.
           </p>
-          <button className="bg-primary text-white px-6 py-2 rounded hover:bg-accent-yellow transition-colors duration-200">
-            View Menu
-          </button>
+          <div className="z-0">
+            <PopButton
+              title="View menu"
+              btnStyles="bg-black"
+              textStyles="text-white"
+              href="/menu"
+            />
+          </div>
         </div>
 
         {/* Images Container */}

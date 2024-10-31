@@ -1,5 +1,6 @@
 import Link from "next/link";
 import InstagramIcon from "../../public/icons/InstagramIcon";
+import PopButton from "./PopButton";
 
 export default function InstagramBox() {
   return (
@@ -14,16 +15,14 @@ export default function InstagramBox() {
             Instagram community!
           </p>
         </div>
-        <div className="text-center">
-          <Link
+        <div className="text-center justify-center items-center inline-flex w-full">
+          <PopButton
             href="https://instagram.com/huong.cafe190"
             target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition duration-150 ease-in-out"
-          >
-            <InstagramIcon className="w-5 h-5 mr-2" aria-hidden="true" />
-            Follow @huongcafe
-          </Link>
+            title="Follow @huong.cafe190"
+            btnStyles="bg-primary"
+            textStyles="text-white"
+          />
         </div>
       </div>
     </div>

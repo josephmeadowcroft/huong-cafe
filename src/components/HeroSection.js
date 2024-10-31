@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import PopButton from "./PopButton";
 
 const HeroSection = () => {
   return (
@@ -46,23 +49,13 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
         >
-          <motion.button
-            className="bg-white text-black px-6 py-3 rounded-md font-semibold 
-                     hover:bg-green-50 transition-colors duration-200 
-                     flex items-center justify-center gap-2"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View menu
-          </motion.button>
-          <motion.button
-            className="border-2 border-white text-white px-6 py-3 rounded-md font-semibold 
-                     hover:bg-white hover:text-black transition-colors duration-200"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Find us
-          </motion.button>
+          <PopButton title="View menu" href="/menu" />
+          <PopButton
+            title="Find us"
+            btnStyles="bg-primary border-2 border-white hover:bg-white"
+            textStyles="text-white hover:text-black"
+            href="/contact"
+          />
         </motion.div>
       </div>
     </div>

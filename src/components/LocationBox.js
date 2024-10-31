@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Emoji from "./Emoji";
+import PopButton from "./PopButton";
 
 const position = [51.54382, -0.04697];
 
@@ -25,7 +26,7 @@ export default function LocationBox() {
           </div>
           <div className="w-full md:w-3/5 p-6">
             <h3 className="text-3xl font-bold mb-4">Where to find us</h3>
-            <div className="mb-4 text-lg">
+            <div className="mb-4 text-xl">
               <p>
                 <Emoji symbol="📍" />
                 190 Well Street
@@ -40,14 +41,13 @@ export default function LocationBox() {
               <p>Saturday - Sunday: 8:00 AM - 10:00 PM</p>
             </div>
             <div className="md:hidden">
-              <Link
+              <PopButton
                 href={`https://www.google.com/maps/search/?api=1&query=${position[0]},${position[1]}`}
+                title="View on Google Maps"
+                btnStyles="bg-black"
+                textStyles="text-white"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-primary text-white px-4 py-2 rounded hover:bg-opacity-90 transition-colors duration-200"
-              >
-                View on Google Maps
-              </Link>
+              />
             </div>
           </div>
         </div>
