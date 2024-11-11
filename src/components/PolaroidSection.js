@@ -13,10 +13,10 @@ const WelcomeSection = () => {
             <Emoji symbol="🎉" className="pl-2" />
           </h3>
           <p className="text-foreground mb-6">
-            We're excited to announce that our Vietnamese café is now open! We
-            cannot wait to bring our Vietnamese cuisine to you, so whether
-            you're just stopping by or settling in for a relaxing meal, we look
-            forward to serving you and becoming part of your community.
+            We&apos;re excited to announce that our Vietnamese café is now open!
+            We cannot wait to bring our Vietnamese cuisine to you, so whether
+            you&apos;re just stopping by or settling in for a relaxing meal, we
+            look forward to serving you and becoming part of your community.
           </p>
           <div className="z-0">
             <PopButton
