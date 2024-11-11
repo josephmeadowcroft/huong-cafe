@@ -13,10 +13,10 @@ const WelcomeSection = () => {
             <Emoji symbol="🎉" className="pl-2" />
           </h3>
           <p className="text-foreground mb-6">
-            We&aposre excited to announce that our Vietnamese café is now open!
-            We cannot wait to bring our Vietnamese cuisine to you, so whether
-            you&aposre just stopping by or settling in for a relaxing meal, we
-            look forward to serving you and becoming part of your community.
+            We're excited to announce that our Vietnamese café is now open! We
+            cannot wait to bring our Vietnamese cuisine to you, so whether
+            you're just stopping by or settling in for a relaxing meal, we look
+            forward to serving you and becoming part of your community.
           </p>
           <div className="z-0">
             <PopButton
@@ -37,6 +37,7 @@ const WelcomeSection = () => {
                 src="/huong-polaroid-1.png"
                 alt="Polaroid Image 1"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-contain"
                 draggable={false}
               />
@@ -48,6 +49,7 @@ const WelcomeSection = () => {
                 src="/huong-polaroid-2.png"
                 alt="Polaroid Image 2"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-contain"
                 draggable={false}
               />

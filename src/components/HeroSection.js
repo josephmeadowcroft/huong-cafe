@@ -7,7 +7,7 @@ import PopButton from "./PopButton";
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-[65vh] bg-primary flex items-center justify-center">
+    <div className="relative min-h-[60vh] bg-primary flex items-center justify-center">
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 md:px-8 max-w-3xl mx-auto">
         {/* Logo Container */}

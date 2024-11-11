@@ -5,12 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import PopButton from "./PopButton";
 
 const menuItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Menu", href: "/menu" },
-  { name: "Contact", href: "/contact" },
 ];
 
 const NavBar = () => {
@@ -61,7 +61,7 @@ const NavBar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-6">
+          <ul className="hidden md:flex space-x-8 items-center">
             {menuItems.map((item) => (
               <li key={item.name}>
                 <Link
@@ -72,6 +72,9 @@ const NavBar = () => {
                 </Link>
               </li>
             ))}
+            <li key="order-button">
+              <PopButton href="/order" title="Order Now" />
+            </li>
           </ul>
 
           {/* Mobile Menu Button */}
@@ -107,6 +110,15 @@ const NavBar = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/order"
+                  className="block text-white font-semibold hover:text-accent-yellow transition-colors duration-200"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Order Now
+                </Link>
+              </li>
             </ul>
           </motion.div>
         )}

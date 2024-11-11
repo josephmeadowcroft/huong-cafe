@@ -20,7 +20,7 @@ export default function PhotoSection() {
         <div className="w-fit">
           <PopButton
             href="/"
-            title="View gallery"
+            title="Find out more"
             btnStyles="bg-black"
             textStyles="text-white"
           />
